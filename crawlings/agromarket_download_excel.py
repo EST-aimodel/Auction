@@ -11,8 +11,8 @@ chromedriver_autoinstaller.install()
 
 # 경로 설정
 base_dir = os.getcwd()  # 현재 실행 경로
-tmp_dir = os.path.join(base_dir, r"raw\data\tmp")  # 임시 다운로드 폴더
-final_dir = os.path.join(base_dir, r"raw\data\agromarket")  # 최종 저장 폴더
+tmp_dir = os.path.join(base_dir, r"data\raw\tmp")  # 임시 다운로드 폴더
+final_dir = os.path.join(base_dir, r"data\raw\agromarket")  # 최종 저장 폴더
 
 os.makedirs(tmp_dir, exist_ok=True)
 os.makedirs(final_dir, exist_ok=True)
