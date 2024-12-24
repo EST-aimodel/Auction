@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
 from dotenv import load_dotenv
 
@@ -60,7 +60,10 @@ CREATE TABLE weather_data (
 # 데이터베이스 및 테이블 설정
 try:
     with engine.connect() as connection:
-        connection.execute(setup_sql)
+        # 여러 SQL 문을 개별적으로 실행
+        for statement in setup_sql.split(';'):
+            if statement.strip():
+                connection.execute(text(statement))
     print("데이터베이스 및 테이블이 성공적으로 생성되었습니다.")
 except SQLAlchemyError as e:
     print(f"데이터베이스 설정 중 오류 발생: {e}")
