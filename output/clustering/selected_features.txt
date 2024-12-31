@@ -1,0 +1,9 @@
+총물량_std
+매출액_mean
+매출액_std
+평균단가_max
+총물량_mean
+평균단가_min
+총물량_max
+단가_변동성_mean
+평균단가_mean
